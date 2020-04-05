@@ -18,10 +18,11 @@ Z2 = Q(X, Y, (-4 * x + 2.5 * y + 6))
 
 surf = ax.plot_surface(X, Y, Z1, cmap=cm.coolwarm,
                        linewidth=0, antialiased=False)
+surf2 = ax.plot_surface(X, Y, Z2, cmap=cm.coolwarm,
+                       linewidth=0, antialiased=False)
 plt.grid(True)
 plt.show()
 
-#получили поверхность, по которой можно определить точку минимума
 A = np.array([[1,2,-1], [8,-5,2]])
 B = np.array([1,12])
 np.linalg.lstsq(A,B, rcond=None)
