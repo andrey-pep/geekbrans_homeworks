@@ -3,3 +3,6 @@
     library_db.sql - Скрипт создания БД
    	library_full.sql - скрипт наполнения БД
     ERDiagram.pdf - ER диаграмма
+    views.sql - представления
+    main_requests.sql - скрипты характерных выборок
+    proc_trig.sql - триггеры и процедуры
