@@ -13,15 +13,6 @@ CREATE TABLE Category(
 	name varchar(255) not null default ''
 );
 
-
-DROP TABLE IF EXISTS Category2Shelf;
-CREATE TABLE Category2Shelf(
-	shelf_id int unsigned not null,
-	category_id int unsigned not null,
-	foreign key(shelf_id) REFERENCES Shelf(id),
-	foreign key(category_id) REFERENCES Category(id)
-);
-
 DROP TABLE IF EXISTS Author;
 CREATE TABLE Author (
 	id int unsigned not null AUTO_INCREMENT primary key,
@@ -29,14 +20,6 @@ CREATE TABLE Author (
 	day_death date,
 	country_birth varchar(255) not null default '',
 	full_name varchar(255) not null default ''
-);
-
-DROP TABLE IF EXISTS Author2Shelf;
-CREATE TABLE Author2Shelf(
-	author_id int unsigned not null,
-	shelf_id int unsigned not null,
-	foreign key(author_id) REFERENCES Author(id),
-	foreign key(shelf_id) REFERENCES Shelf(id)
 );
 
 DROP TABLE IF EXISTS Book;
@@ -86,4 +69,21 @@ CREATE TABLE Event(
 	foreign key(organizer_id) REFERENCES Librarian(id),
 	name varchar(255) not null default '',
 	description mediumtext
+);
+
+DROP TABLE IF EXISTS Schedule;
+CREATE TABLE Schedule(
+	id int unsigned not null AUTO_INCREMENT primary key,
+	start date,
+	finish date,
+	librarian_id int unsigned not null,
+	foreign key(librarian_id) REFERENCES Librarian(id)
+);
+
+DROP TABLE IF EXISTS Debt;
+CREATE TABLE Dept(
+	id int unsigned not null AUTO_INCREMENT primary key,
+	library_card_id int unsigned not null,
+	foreign key(library_card_id) REFERENCES LibraryCard(id),
+	amount int(11) not null default 11
 );
