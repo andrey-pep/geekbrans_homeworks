@@ -22,6 +22,8 @@ CREATE TABLE `Author` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE index Author_fullname on Author(full_name);
+
 INSERT INTO `Author` VALUES ('1','1974-01-08','1985-11-22','Jersey','Fidel Bruen'),
 ('2','2006-05-24','2013-01-26','Argentina','Jaleel Simonis'),
 ('3','1975-09-28','1975-09-14','Ecuador','Elroy O\'Connell II'),
@@ -90,6 +92,9 @@ CREATE TABLE `Book` (
   CONSTRAINT `Book_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `Category` (`id`),
   CONSTRAINT `Book_ibfk_3` FOREIGN KEY (`shelf_id`) REFERENCES `Shelf` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE index Book_name on Book(name);
+CREATE index Book_category on Book(category_id);
 
 INSERT INTO `Book` VALUES ('1','1','1','1','2017','vel'),
 ('2','2','2','2','1972','quia'),
