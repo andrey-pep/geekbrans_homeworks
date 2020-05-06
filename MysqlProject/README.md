@@ -5,4 +5,4 @@
     ERDiagram.pdf - ER диаграмма
     views.sql - представления
     main_requests.sql - скрипты характерных выборок
-    proc_trig.sql - триггеры и процедуры
+    proc.sql - процедуры
