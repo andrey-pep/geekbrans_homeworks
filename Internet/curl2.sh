@@ -1,0 +1,1 @@
+curl -u andrey-pep:<password> https://api.github.com/user/repos > myrepos2.json
